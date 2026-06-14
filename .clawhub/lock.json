@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "skills": {
+    "gog": {
+      "version": "1.0.0",
+      "installedAt": 1781417403391,
+      "registry": "https://clawhub.ai"
+    },
+    "mcporter": {
+      "version": "1.0.0",
+      "installedAt": 1781422601931,
+      "registry": "https://clawhub.ai"
+    }
+  }
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day Trading — Fundamentals</title>
+<style>
+  :root{ --bg:#1a1a2e; --bg2:#16213e; --gold:#FFD700; --blue:#53a8ff; --txt:#e8e8f0; --muted:#a0a0c0; --green:#3ddc97; --red:#ff6b6b; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%;font-family:-apple-system,Helvetica,Arial,sans-serif;background:#0d0d14;color:var(--txt);overflow:hidden}
+  .deck{height:100vh;width:100vw;position:relative}
+  .slide{position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;
+    padding:6vh 9vw;background:linear-gradient(160deg,var(--bg),var(--bg2));animation:fade .4s ease}
+  .slide.active{display:flex}
+  @keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  h1{font-size:clamp(32px,6vw,68px);color:var(--gold);line-height:1.05;margin-bottom:18px}
+  h2{font-size:clamp(26px,4vw,46px);color:var(--gold);margin-bottom:28px}
+  .sub{font-size:clamp(16px,2vw,24px);color:var(--muted);margin-bottom:10px}
+  ul{list-style:none;font-size:clamp(17px,2.1vw,26px);line-height:1.9}
+  li{padding-left:34px;position:relative;margin-bottom:6px}
+  li:before{content:"▸";color:var(--blue);position:absolute;left:0}
+  .term{color:var(--gold);font-weight:700}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 40px;font-size:clamp(15px,1.8vw,22px);line-height:1.7}
+  .card{background:rgba(255,255,255,.05);border-left:3px solid var(--blue);border-radius:10px;padding:16px 20px}
+  .card h3{color:var(--gold);font-size:clamp(17px,2vw,24px);margin-bottom:6px}
+  .big{font-size:clamp(48px,9vw,120px);color:var(--green);font-weight:800;text-align:center;margin:10px 0}
+  .center{align-items:center;text-align:center}
+  .badge{display:inline-block;background:var(--gold);color:var(--bg);font-weight:700;border-radius:30px;padding:6px 20px;font-size:clamp(13px,1.5vw,18px);margin-bottom:24px}
+  .warn{color:var(--red)} .good{color:var(--green)}
+  .disc{font-size:clamp(13px,1.5vw,18px);color:var(--muted);font-style:italic;margin-top:auto;padding-top:20px}
+  .nav{position:fixed;bottom:18px;right:26px;color:var(--muted);font-size:14px;z-index:10}
+  .dots{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:9px;z-index:10}
+  .dot{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.25);cursor:pointer}
+  .dot.on{background:var(--gold)}
+  .hint{position:fixed;top:16px;right:24px;color:var(--muted);font-size:12px;opacity:.6}
+</style>
+</head>
+<body>
+<div class="deck" id="deck">
+
+  <section class="slide center active">
+    <div class="badge">📈 EDUCATIONAL DECK</div>
+    <h1>Day Trading</h1>
+    <p class="sub" style="font-size:clamp(18px,2.6vw,30px)">Fundamentals, Risk &amp; Discipline</p>
+    <p class="sub" style="margin-top:30px">Use ← → arrows or click the dots to navigate</p>
+  </section>
+
+  <section class="slide">
+    <h2>What Day Trading Is</h2>
+    <ul>
+      <li>Buying and selling a security <span class="term">within the same day</span> — no positions held overnight.</li>
+      <li>Profit comes from <span class="term">small, frequent price moves</span>, not long-term growth.</li>
+      <li>Requires speed, focus, and a tested plan — it is a <span class="term">skill</span>, not luck.</li>
+      <li>Most beginners lose money. The edge is <span class="term">discipline + risk control</span>, not picking winners.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Key Terms</h2>
+    <div class="grid">
+      <div class="card"><h3>Liquidity</h3>How easily you can enter/exit without moving the price.</div>
+      <div class="card"><h3>Volatility</h3>Size of price swings — your opportunity and your risk.</div>
+      <div class="card"><h3>Spread</h3>Gap between bid and ask. Tighter = cheaper to trade.</div>
+      <div class="card"><h3>Volume</h3>Shares traded. High volume = reliable moves.</div>
+      <div class="card"><h3>Stop-Loss</h3>Auto-exit that caps your loss on a trade.</div>
+      <div class="card"><h3>Float</h3>Shares available to trade. Low float = sharp moves.</div>
+    </div>
+  </section>
+
+  <section class="slide center">
+    <h2>The Golden Rule of Risk</h2>
+    <div class="big">1%</div>
+    <p class="sub">Never risk more than <span class="term">1–2% of your account</span> on a single trade.</p>
+    <ul style="margin-top:24px">
+      <li>$5,000 account → max loss <span class="good">$50–$100</span> per trade.</li>
+      <li>Survival first. You cannot trade tomorrow if you blow up today.</li>
+      <li>Set the stop-loss <span class="term">before</span> you enter — never after.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Common Strategies</h2>
+    <div class="grid">
+      <div class="card"><h3>Scalping</h3>Dozens of tiny trades, seconds to minutes. Needs tight spreads.</div>
+      <div class="card"><h3>Momentum</h3>Ride stocks moving hard on news/volume. Exit when it stalls.</div>
+      <div class="card"><h3>Breakout</h3>Enter when price clears a key level with volume behind it.</div>
+      <div class="card"><h3>Reversal</h3>Fade an overextended move. Higher risk, needs confirmation.</div>
+    </div>
+    <p class="sub" style="margin-top:22px">Pick <span class="term">one</span>. Master it before adding another.</p>
+  </section>
+
+  <section class="slide">
+    <h2>Your Toolkit</h2>
+    <ul>
+      <li><span class="term">Broker</span> — low fees, fast fills, good platform.</li>
+      <li><span class="term">Charting</span> — candlesticks, volume, a few indicators (don't overload).</li>
+      <li><span class="term">Watchlist</span> — 3–5 stocks you know well, prepped the night before.</li>
+      <li><span class="term">Trade journal</span> — log every trade: entry, exit, reason, lesson.</li>
+      <li><span class="term">News feed</span> — catalysts move stocks; know what's driving the day.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Mistakes That Kill Accounts</h2>
+    <ul>
+      <li class="warn">Revenge trading — chasing losses with bigger bets.</li>
+      <li class="warn">No stop-loss — letting a small loss become a huge one.</li>
+      <li class="warn">Overtrading — forcing trades when there's no setup.</li>
+      <li class="warn">Oversizing — risking too much on "the sure thing."</li>
+      <li class="warn">Trading on emotion instead of a written plan.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>A Disciplined Daily Routine</h2>
+    <ul>
+      <li><span class="term">Pre-market</span> — review watchlist, news, key levels.</li>
+      <li><span class="term">Plan</span> — write entries, stops, and targets <em>before</em> the open.</li>
+      <li><span class="term">Execute</span> — take only setups that match your plan.</li>
+      <li><span class="term">Cap it</span> — set a daily loss limit; stop when you hit it.</li>
+      <li><span class="term">Review</span> — journal every trade. Find the pattern in your wins and losses.</li>
+    </ul>
+  </section>
+
+  <section class="slide center">
+    <h1 style="font-size:clamp(28px,5vw,56px)">Protect capital.<br>Trade the plan.<br>Review everything.</h1>
+    <p class="disc" style="margin-top:40px">⚠️ Educational content only — not financial advice. Day trading carries substantial risk of loss. Most retail day traders lose money. Never trade money you cannot afford to lose.</p>
+  </section>
+
+</div>
+
+<div class="hint">← → to navigate · F for fullscreen</div>
+<div class="nav"><span id="cur">1</span> / <span id="tot">9</span></div>
+<div class="dots" id="dots"></div>
+
+<script>
+  const slides=[...document.querySelectorAll('.slide')];
+  let i=0;
+  const dotsWrap=document.getElementById('dots');
+  slides.forEach((_,n)=>{const d=document.createElement('div');d.className='dot'+(n===0?' on':'');d.onclick=()=>go(n);dotsWrap.appendChild(d);});
+  const dots=[...document.querySelectorAll('.dot')];
+  document.getElementById('tot').textContent=slides.length;
+  function go(n){i=Math.max(0,Math.min(slides.length-1,n));
+    slides.forEach((s,k)=>s.classList.toggle('active',k===i));
+    dots.forEach((d,k)=>d.classList.toggle('on',k===i));
+    document.getElementById('cur').textContent=i+1;}
+  document.addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight'||e.key===' ')go(i+1);
+    if(e.key==='ArrowLeft')go(i-1);
+    if(e.key==='Home')go(0); if(e.key==='End')go(slides.length-1);
+    if(e.key.toLowerCase()==='f'){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();}
+  });
+  document.getElementById('deck').addEventListener('click',e=>{ if(!e.target.classList.contains('dot')) go(i+1); });
+</script>
+</body>
+</html>
