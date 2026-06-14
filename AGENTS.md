@@ -251,6 +251,30 @@ Think of it like a human reviewing their journal and updating their mental model
 
 The goal: Be helpful without being annoying. Check in a few times a day, do useful background work, but respect quiet time.
 
+## Project Structure & Module Organization
+
+- **Source code:** `src/` (CLI wiring in `src/cli`, commands in `src/commands`, web provider in `src/provider-web.ts`, infra in `src/infra`, media pipeline in `src/media`)
+- **Tests:** colocated `*.test.ts`
+- **Docs:** `docs/` (images, queue, Pi config). Built output lives in `dist/`
+- **Plugins/extensions:** live in `extensions/` (workspace packages). Keep plugin-only deps in the extension `package.json`; do not add them to the root `package.json` unless something uses them.
+- **Plugins:** install runs `npm install --save-dev` in plugin dir; runtime deps must live in dependencies. Avoid `workspace:*` in dependencies (npm breaks); use exact versions in `devDependencies` or `peerDependencies` instead.
+- **Installers:** served from https://openclaw.ai/ — live in the sibling repo `../openclaw.ai` (`public/install.sh`, `public/install.ps1`)
+- **Messaging channel docs:** consider all built-in extensions when refactoring shared logic (routing, allowlists, pairing, command gating, onboarding, docs)
+  - Core channel docs: `docs/channels/`
+  - Core channels: `src/telegram`, `src/discord`, `src/slack`, `src/signal`, `src/message`, `src/wab` (WhatsApp web), `src/channels`, `src/routing`
+  - Extension channels: `extensions/telegram`, `extensions/discord`, `extensions/whatsapp`, `extensions/matrix`, `extensions/slack`, etc.
+- **When adding channels/extensions/apps/docs:** update `.github/labeler.yml` and create matching GitHub labels (use existing channel/extension label colors)
+
+## Repository Guidelines
+
+- **Repo:** https://github.com/openclaw/openclaw
+- In chat replies, file references must be repo-root relative only (example: `extensions/SlashGuides/src/channel_1.ts:88`); never absolute paths or `~/`.
+- **GitHub issues/comments/PR comments:** use literal multiline strings with `-e` or `$'...'` for real newlines; never embed `\n`.
+- **GitHub comment footgun:** never use `gh issue/pr comment -b "..."` when body contains backticks or shell chars. Always use single-quoted heredoc (`-F - << 'EOF'`) so no command substitution/escaping corruption.
+- **GitHub linking footgun:** don't wrap issue/PR refs like `#1043` in backticks when you want auto-linking. Use plain `#1043` (optionally add full URL).
+- **GitHub searching footgun:** don't limit yourself to the first 500 issues or PRs when searching all. Keep going until you've reached the last page.
+- **Security advisory analysis:** before triage/severity decisions, read `SECURITY.md` to align with OpenClaw's trust model and design boundaries.
+
 ## Make It Yours
 
 This is a starting point. Add your own conventions, style, and rules as you figure out what works.

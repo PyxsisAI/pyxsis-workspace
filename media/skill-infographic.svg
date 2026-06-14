@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1200" height="1200" fill="#f1f5f9"/>
+  <rect x="0" y="0" width="1200" height="165" fill="#1e293b"/>
+  <rect x="0" y="165" width="1200" height="5" fill="#4f46e5"/>
+  <text x="600" y="88" text-anchor="middle" fill="#ffffff" font-size="54" font-weight="bold">WHAT IS A SKILL?</text>
+  <text x="600" y="132" text-anchor="middle" fill="#cbd5e1" font-size="24">A packaged capability that teaches your AI assistant one specific job.</text>
+
+  <!-- definition -->
+  <rect x="60" y="200" width="1080" height="110" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+  <rect x="60" y="200" width="9" height="110" rx="4" fill="#0d9488"/>
+  <text x="92" y="242" fill="#0d9488" font-size="21" font-weight="bold">IN PLAIN TERMS</text>
+  <text x="92" y="276" fill="#1e293b" font-size="22">An instruction manual + toolkit the assistant picks up on demand.</text>
+  <text x="92" y="302" fill="#475569" font-size="22" font-weight="bold">No skill = guessing.   With a skill = a proven recipe.</text>
+
+  <!-- anatomy -->
+  <text x="60" y="372" fill="#1e293b" font-size="29" font-weight="bold">Anatomy of a Skill</text>
+  <line x1="60" y1="387" x2="1140" y2="387" stroke="#cbd5e1" stroke-width="2"/>
+
+  <rect x="60" y="410" width="345" height="210" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+  <rect x="60" y="410" width="345" height="52" rx="14" fill="#eef2ff"/>
+  <rect x="60" y="441" width="345" height="21" fill="#eef2ff"/>
+  <text x="86" y="446" fill="#4f46e5" font-size="24" font-weight="bold">📄 SKILL.md</text>
+  <text x="86" y="502" fill="#475569" font-size="20">The brain. Holds:</text>
+  <text x="86" y="536" fill="#1e293b" font-size="20">• name &amp; description</text>
+  <text x="86" y="568" fill="#1e293b" font-size="20">• when to trigger it</text>
+  <text x="86" y="600" fill="#1e293b" font-size="20">• step-by-step how-to</text>
+
+  <rect x="427" y="410" width="345" height="210" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+  <rect x="427" y="410" width="345" height="52" rx="14" fill="#ecfeff"/>
+  <rect x="427" y="441" width="345" height="21" fill="#ecfeff"/>
+  <text x="453" y="446" fill="#0d9488" font-size="24" font-weight="bold">🛠 Scripts &amp; Tools</text>
+  <text x="453" y="502" fill="#475569" font-size="20">The hands. Code to act:</text>
+  <text x="453" y="540" fill="#1e293b" font-size="20">• helper scripts</text>
+  <text x="453" y="572" fill="#1e293b" font-size="20">• commands &amp; APIs</text>
+
+  <rect x="794" y="410" width="346" height="210" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+  <rect x="794" y="410" width="346" height="52" rx="14" fill="#fff7ed"/>
+  <rect x="794" y="441" width="346" height="21" fill="#fff7ed"/>
+  <text x="820" y="446" fill="#c2410c" font-size="24" font-weight="bold">📚 Resources</text>
+  <text x="820" y="502" fill="#475569" font-size="20">The reference shelf:</text>
+  <text x="820" y="540" fill="#1e293b" font-size="20">• templates &amp; examples</text>
+  <text x="820" y="572" fill="#1e293b" font-size="20">• extra docs</text>
+
+  <!-- how it works -->
+  <text x="60" y="690" fill="#1e293b" font-size="29" font-weight="bold">How It Works</text>
+  <line x1="60" y1="705" x2="1140" y2="705" stroke="#cbd5e1" stroke-width="2"/>
+
+  <line x1="290" y1="795" x2="378" y2="795" stroke="#94a3b8" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="558" y1="795" x2="646" y2="795" stroke="#94a3b8" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="826" y1="795" x2="914" y2="795" stroke="#94a3b8" stroke-width="4" marker-end="url(#arrow)"/>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <rect x="70" y="735" width="210" height="120" rx="14" fill="#4f46e5"/>
+  <text x="175" y="779" text-anchor="middle" fill="#c7d2fe" font-size="20" font-weight="bold">STEP 1</text>
+  <text x="175" y="811" text-anchor="middle" fill="#ffffff" font-size="25" font-weight="bold">Trigger</text>
+  <text x="175" y="838" text-anchor="middle" fill="#e0e7ff" font-size="16">request matches</text>
+
+  <rect x="338" y="735" width="210" height="120" rx="14" fill="#0d9488"/>
+  <text x="443" y="779" text-anchor="middle" fill="#99f6e4" font-size="20" font-weight="bold">STEP 2</text>
+  <text x="443" y="811" text-anchor="middle" fill="#ffffff" font-size="25" font-weight="bold">Load</text>
+  <text x="443" y="838" text-anchor="middle" fill="#ccfbf1" font-size="16">read SKILL.md</text>
+
+  <rect x="606" y="735" width="210" height="120" rx="14" fill="#7c3aed"/>
+  <text x="711" y="779" text-anchor="middle" fill="#ddd6fe" font-size="20" font-weight="bold">STEP 3</text>
+  <text x="711" y="811" text-anchor="middle" fill="#ffffff" font-size="25" font-weight="bold">Follow</text>
+  <text x="711" y="838" text-anchor="middle" fill="#ede9fe" font-size="16">the instructions</text>
+
+  <rect x="874" y="735" width="210" height="120" rx="14" fill="#c2410c"/>
+  <text x="979" y="779" text-anchor="middle" fill="#fed7aa" font-size="20" font-weight="bold">STEP 4</text>
+  <text x="979" y="811" text-anchor="middle" fill="#ffffff" font-size="25" font-weight="bold">Act</text>
+  <text x="979" y="838" text-anchor="middle" fill="#ffedd5" font-size="16">run tools, reply</text>
+
+  <!-- footer -->
+  <rect x="0" y="920" width="1200" height="280" fill="#1e293b"/>
+  <text x="600" y="985" text-anchor="middle" fill="#ffffff" font-size="24" font-weight="bold">SKILLS YOU ALREADY HAVE</text>
+  <text x="600" y="1028" text-anchor="middle" fill="#cbd5e1" font-size="23">🌦 Weather    ·    💬 Discord Admin    ·    🎙 Voice-to-Text    ·    📊 Diagrams</text>
+  <line x1="300" y1="1070" x2="900" y2="1070" stroke="#334155" stroke-width="2"/>
+  <text x="600" y="1120" text-anchor="middle" fill="#4ade80" font-size="26" font-weight="bold">Reusable  ·  Shareable  ·  Modular  ·  Consistent</text>
+  <text x="600" y="1158" text-anchor="middle" fill="#94a3b8" font-size="19">Build a capability once — use it forever. 🦅</text>
+</svg>
