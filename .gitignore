@@ -1,0 +1,19 @@
+# Secrets & credentials — never commit these
+secrets.json
+*.env
+.env*
+*.key
+*.pem
+*.token
+
+# Sensitive memory files
+.openclaw/secrets/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Large media files
+media/inbound/*.ogg
+media/inbound/*.mp4
+media/inbound/*.mp3
