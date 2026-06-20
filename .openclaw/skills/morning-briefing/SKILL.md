@@ -9,8 +9,9 @@ allowed-tools: ["web_fetch", "web_search", "message"]
 Deliver Bethany's daily morning briefing every day at 8:00 AM EST to both Telegram and Discord.
 
 ## Delivery Targets
-- Telegram: Bethany (ID: 8394949531)
-- Discord: Bethany's OpenClaw Server — #general channel
+- Telegram: Bethany (ID: 8394949531) — `target: "8394949531"`
+- Discord: #general channel — use `target: "channel:1513347583852937258"` (NOT `channel:general`, which fails with "Invalid Form Body"). Guild ID: 1513347583228121268.
+- Discord has a 2000-char message limit. The full briefing exceeds it — split into 2 messages (Sections 1–5, then 6–10). Telegram has no such limit; send as one message.
 
 ## Briefing Format
 

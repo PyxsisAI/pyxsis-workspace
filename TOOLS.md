@@ -86,6 +86,23 @@ Add whatever helps you do your job. This is your cheat sheet.
 - **List inboxes:** `GET /v0/inboxes`.
 - Never print/commit the API key.
 
+## Gmail Access (gog CLI) — bwilli787@gmail.com IS connected
+
+I CAN read, search, and trash mail in Bethany's personal Gmail via the `gog` skill (Google Workspace CLI). **Do NOT say "no Gmail access" — it's authenticated.**
+
+- **Authenticated accounts** (`gog auth list`):
+  - `bwilli787@gmail.com` — scope: gmail (personal inbox)
+  - `zenithhealthsvcs@gmail.com` — scopes: calendar,contacts,docs,drive,gmail,sheets
+- **Always set account first:** `export GOG_ACCOUNT=bwilli787@gmail.com`
+- **Search:** `gog gmail search '<gmail query>' --max 200 --json` (returns `id`,`from`,`subject`,`labels`)
+- **Trash (recoverable ~30d):** `gog gmail trash <messageId>` — **one ID at a time in a loop**; batching many IDs fails with "Invalid ids value". Loop: `while read id; do gog gmail trash "$id"; done`
+- **No native Gmail filters** (gog has no `filter` cmd, scope lacks settings.basic). Use the scheduled sweep instead.
+
+### Store promo auto-trash sweep
+- **Script:** `~/.openclaw/scripts/gmail-promo-sweep.sh` (log: same dir `.log`)
+- **Cron:** isolated job `gmail-promo-sweep`, daily 7:00 AM ET (id `3c715ab0-ceeb-497a-b79a-2670f45b556d`)
+- **Covers:** MAC, Carnival Cruise, DSW, Kohl's(promo only), IKEA, Fresh Market, Harris Teeter, Michaels, FTD, Bath & Body Works, QVC, Webull(marketing only), Thrive Causemetics, MyPoints, GreenPal, Victoria's Secret, Vacations To Go, Shoe Carnival, Hometalk, Saks, SoFi(marketing m.sofi.org), Coach, Panera, Incredible Health, GovX, Macy's. Excludes Kohl's order receipts (t.kohls.com) + Webull account/trading notices (webullpay.com — Bethany day-trades). Add senders by editing the QUERY in the script.
+
 ## Discord Admin (Custom Skill)
 
 You CAN create, delete, and rename Discord channels using this script:
@@ -129,3 +146,7 @@ I CAN transcribe inbound voice notes (Telegram/WhatsApp `.ogg` Opus) fully offli
 `https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-base.en.bin`.
 Re-download there if missing. The `for-tests-ggml-tiny.bin` in homebrew share is a TEST model only — do NOT use it.
 For higher accuracy on long/noisy clips, swap in `ggml-small.en.bin`.
+
+**Multilingual model (durable):** `~/.cache/whisper/ggml-base.bin` (147MB) — installed 2026-06-15 for **Spanish** voice practice (Bethany's Spanish course). Use this (NOT base.en) for non-English audio:
+`whisper-cli -m ~/.cache/whisper/ggml-base.bin -f /tmp/x.wav -l es -nt` (set `-l es` for Spanish, or `-l auto`).
+Short/muffled clips transcribe poorly — ask Bethany to repeat slower/closer if unclear rather than guessing.
